@@ -1,8 +1,13 @@
 {
-  "name": "react-electron-starter",
-  "version": "0.1.0",
-  "description": "An example React + Electron application",
+  "name": "react-electron-starter-new",
+  "version": "1.0.0",
+  "description": "react-electron-starter-new",
   "main": "main.js",
+  "license": "CC0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jiramew/react_electron_starter_new.git"
+  },
   "scripts": {
     "start": "electron main.js",
     "dev": "node server.js",
@@ -12,7 +17,6 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
-    "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.7",
     "electron": "^1.7.6",
