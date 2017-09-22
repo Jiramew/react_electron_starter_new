@@ -1,0 +1,29 @@
+{
+  "name": "react-electron-starter",
+  "version": "0.1.0",
+  "description": "An example React + Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js",
+    "dev": "node server.js",
+    "postinstall": "webpack -p --config webpack.config.js"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "electron": "^1.7.6",
+    "express": "^4.15.4",
+    "node-sass": "^4.5.3",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.6.0",
+    "webpack-dev-middleware": "^1.12.0",
+    "webpack-dev-server": "^2.8.2",
+    "webpack-hot-middleware": "^2.19.1"
+  }
+}
