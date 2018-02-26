@@ -1,10 +1,14 @@
 import React, {Component} from 'react';
+import {render} from 'react-dom';
 
 export default class FileList extends Component {
     constructor(props) {
         super(props);
 
         this.state = {filenames: []};
+    }
+
+    conponentDidMount() {
     }
 
     on_change(new_file_list) {
@@ -19,8 +23,10 @@ export default class FileList extends Component {
                     {index} : {name}
                 </li>);
         }
-        return render_file_list;
+        return (
+            <div>
+                {render_file_list}
+            </div>
+        );
     }
 }
-
-
