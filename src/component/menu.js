@@ -1,4 +1,4 @@
-const appMenuTemplate = [
+exports.appMenuTemplate = [
     {
         label: 'File',
         submenu: []
@@ -73,7 +73,7 @@ const appMenuTemplate = [
             {
                 label: 'Home Page',
                 click() {
-                    require('electron').shell.openExternal('http://www.jianshu.com/u/a7454e40399d');
+                    require('electron').shell.openExternal('https://github.com/Jiramew');
                 }
             }
         ]
