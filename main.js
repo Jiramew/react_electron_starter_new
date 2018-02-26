@@ -6,7 +6,7 @@ const electron = require('electron');
 
 // Module to control application life.
 const app = electron.app;
-const appMenuTemplate = require('./src/component/menu').appMenuTemplate;
+const appMenuTemplate = require('./src/menu').appMenuTemplate;
 
 const Menu = electron.Menu;
 const MenuItem = electron.MenuItem;

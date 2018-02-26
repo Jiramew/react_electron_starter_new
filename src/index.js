@@ -1,5 +1,5 @@
 import {ipcRenderer, remote} from 'electron';
-import react from 'react';
+
 const {Menu, MenuItem, dialog} = remote;
 
 let currentFile = null; //当前文档保存的路径
