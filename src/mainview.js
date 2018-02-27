@@ -50,7 +50,8 @@ class MainView extends Component {
                     this.setState({final_data: final_data, current_index: 0});
                     document.title = "Labeling Tool - loaded new image files";
                 }
-                //this.isSaved = false;
+                this.isSaved = false;
+                this.current_file = undefined;
                 break;
             case 'open_ljson':
                 this.askSaveIfNeed();
@@ -71,8 +72,8 @@ class MainView extends Component {
                     this.setState({final_data: json_info.data, current_index: current_index});
                     document.title = "Labeling Tool - " + ljson_file;
                 }
-
-                //this.isSaved = false;
+                this.isSaved = false;
+                // this.current_file = undefined;
                 break;
             case 'save':
                 this.saveCurrentDoc();
@@ -148,6 +149,7 @@ class MainView extends Component {
     }
 
     saveCurrentDoc() {
+        console.log(this.current_file);
         if (this.current_file === undefined) {
             const file = remote.dialog.showSaveDialog(remote.getCurrentWindow(), {
                 filters: [

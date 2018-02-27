@@ -4,3 +4,5 @@ node_modules/
 dist/bundle.js
 .idea/
 *.new
+Labeling_tool-win32-x64/
+*.zip
