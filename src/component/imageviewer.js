@@ -20,7 +20,6 @@ class ImageViewer extends Component {
         super(props);
         console.log('init', this.state, this.props);
         this.state = {
-            filenames: this.props.filenames,
             current_index: this.props.current_index,
             current_label: undefined
         };
@@ -31,7 +30,6 @@ class ImageViewer extends Component {
     componentDidMount() {
         console.log('did mount', this.state, this.props);
         this.setState({
-            filenames: this.props.filenames,
             current_index: this.props.current_index,
             current_label: undefined
         })
@@ -54,12 +52,12 @@ class ImageViewer extends Component {
                 </Typography>
             </Paper>
         );
-        if (this.props.filenames !== null && this.props.filenames.length !== 0) {
-            let file_path = this.props.filenames[this.props.current_index];
+        if (this.props.final_data !== null && this.props.final_data.length !== 0) {
+            let file_path = this.props.final_data[this.props.current_index].path;
             render_image_viewer = (
                 <Paper style={{align: "center"}} className="paper">
                     <Typography align="center" variant="title" className="imageViewer">
-                        Image {this.props.current_index} out of {this.props.filenames.length}
+                        Image {this.props.current_index} out of {this.props.final_data.length}
                     </Typography>
                     <img src={file_path}/>
                     <Typography align="center" variant="headline" component="h4">

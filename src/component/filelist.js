@@ -28,8 +28,8 @@ class FileList extends Component {
                 </Typography>
             </Paper>
         );
-        if (this.props.filenames !== null && this.props.filenames.length !== 0) {
-            let upper = Math.min(this.props.filenames.length, this.props.current_index + 3);
+        if (this.props.final_data !== null && this.props.final_data.length !== 0) {
+            let upper = Math.min(this.props.final_data.length, this.props.current_index + 3);
             let lower = Math.max(0, this.props.current_index - 3);
             let final_show_data = this.props.final_data.slice(lower, upper);
 

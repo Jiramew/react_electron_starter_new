@@ -1,7 +1,7 @@
 {
-  "name": "react-electron-starter-new",
+  "name": "Labeling_tool",
   "version": "1.0.0",
-  "description": "react-electron-starter-new",
+  "description": "Labeling_tool for machine learning",
   "main": "main.js",
   "license": "CC0",
   "repository": {
@@ -20,6 +20,7 @@
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.7",
     "electron": "^1.7.6",
+    "electron-packager": "^11.0.1",
     "express": "^4.15.4",
     "node-sass": "^4.5.3",
     "react": "^15.6.1",

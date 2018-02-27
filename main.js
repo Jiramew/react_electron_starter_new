@@ -31,16 +31,24 @@ function createWindow() {
     mainWindow.loadURL('file://' + __dirname + '/dist/index.html');
 
     // Open the DevTools.
-    mainWindow.webContents.openDevTools();
+    // mainWindow.webContents.openDevTools();
 
     const menu = Menu.buildFromTemplate(appMenuTemplate);
 
     menu.items[0].submenu.append(new MenuItem({
-        label: "Open",
+        label: "Open image file",
         click() {
-            mainWindow.webContents.send('action', 'open'); //点击后向主页渲染进程发送“打开文件”的命令
+            mainWindow.webContents.send('action', 'open'); //点击后向主页渲染进程发送“打开图片文件”的命令
         },
         accelerator: 'CmdOrCtrl+O' //快捷键：Ctrl+O
+    }));
+
+    menu.items[0].submenu.append(new MenuItem({
+        label: "Open ljson",
+        click() {
+            mainWindow.webContents.send('action', 'open_ljson'); //点击后向主页渲染进程发送“打开ljson文件”的命令
+        },
+        accelerator: 'CmdOrCtrl+Alt+O' //快捷键：Ctrl+Alt+O
     }));
 
     menu.items[0].submenu.append(new MenuItem({
@@ -105,6 +113,10 @@ function createWindow() {
             mainWindow.webContents.send('action', 'next100');
         },
         accelerator: 'Shift+Right'
+    }));
+
+    menu.items[1].submenu.append(new MenuItem({
+        type: 'separator'
     }));
 
     menu.items[1].submenu.append(new MenuItem({
