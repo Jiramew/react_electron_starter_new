@@ -6,6 +6,7 @@ const electron = require('electron');
 
 // Module to control application life.
 const app = electron.app;
+const globalShortcut = electron.globalShortcut;
 const appMenuTemplate = require('./src/menu').appMenuTemplate;
 
 const Menu = electron.Menu;
@@ -35,14 +36,6 @@ function createWindow() {
     const menu = Menu.buildFromTemplate(appMenuTemplate);
 
     menu.items[0].submenu.append(new MenuItem({
-        label: "New",
-        click() {
-            mainWindow.webContents.send('action', 'new'); //点击后向主页渲染进程发送“新建文件”的命令
-        },
-        accelerator: 'CmdOrCtrl+N' //快捷键：Ctrl+N
-    }));
-
-    menu.items[0].submenu.append(new MenuItem({
         label: "Open",
         click() {
             mainWindow.webContents.send('action', 'open'); //点击后向主页渲染进程发送“打开文件”的命令
@@ -65,6 +58,63 @@ function createWindow() {
     menu.items[0].submenu.append(new MenuItem({
         role: 'quit'
     }));
+
+    menu.items[1].submenu.append(new MenuItem({
+        label: "Prev",
+        click() {
+            mainWindow.webContents.send('action', 'prev');
+        },
+        accelerator: 'Left'
+    }));
+
+    menu.items[1].submenu.append(new MenuItem({
+        label: "Prev10",
+        click() {
+            mainWindow.webContents.send('action', 'prev10');
+        },
+        accelerator: 'CmdOrCtrl+Left'
+    }));
+
+    menu.items[1].submenu.append(new MenuItem({
+        label: "Prev100",
+        click() {
+            mainWindow.webContents.send('action', 'prev100');
+        },
+        accelerator: 'Shift+Left'
+    }));
+
+    menu.items[1].submenu.append(new MenuItem({
+        label: "Next",
+        click() {
+            mainWindow.webContents.send('action', 'next');
+        },
+        accelerator: 'Right'
+    }));
+
+    menu.items[1].submenu.append(new MenuItem({
+        label: "Next10",
+        click() {
+            mainWindow.webContents.send('action', 'next10');
+        },
+        accelerator: 'CmdOrCtrl+Right'
+    }));
+
+    menu.items[1].submenu.append(new MenuItem({
+        label: "Next100",
+        click() {
+            mainWindow.webContents.send('action', 'next100');
+        },
+        accelerator: 'Shift+Right'
+    }));
+
+    menu.items[1].submenu.append(new MenuItem({
+        label: "Correct",
+        click() {
+            mainWindow.webContents.send('action', 'correct');
+        },
+        accelerator: 'Enter'
+    }));
+
     Menu.setApplicationMenu(menu);
 
     mainWindow.on('close', (e) => {
